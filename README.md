@@ -16,5 +16,5 @@ CloudTypes is a JavaScript library implementation of the CloudTypes model writte
 
 ![web interface](photo/sentinels.png "web interface")
 ![web interface](photo/sentinels2.png "web interface")
-![running](sentinels3.png "running")
-![running](sentinels4.jpg "running")
+![running](photo/sentinels3.png "running")
+![running](photo/sentinels4.jpg "running")
