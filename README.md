@@ -4,11 +4,6 @@ This is an application I wrote that you can use while playing the boardgame [Sen
 
 This app requires you to have a server instance running, so my typical setup is a raspberry pi that creates a new network to which every player can connect. You can even attach a projector to the pi if you're feeling fancy.
 
-![web interface](photo/sentinels.png "web interface")
-![web interface](photo/sentinels2.png "web interface")
-![running](sentinels3.jpg "running")
-![running](sentinels4.jpg "running")
-
 ### Behind the scenes
 This app uses CloudTypes to make sure that every update to the counters (HP) are eventually consistent on every running instance of the application. This means that players can use the app while offline or make changes simultaneously.
 
@@ -17,3 +12,9 @@ CloudTypes is a JavaScript library implementation of the CloudTypes model writte
 
 [1]: https://github.com/ticup/CloudTypes
 [2]: https://www.npmjs.com/package/cloudtypes
+
+
+![web interface](photo/sentinels.png "web interface")
+![web interface](photo/sentinels2.png "web interface")
+![running](sentinels3.png "running")
+![running](sentinels4.jpg "running")
