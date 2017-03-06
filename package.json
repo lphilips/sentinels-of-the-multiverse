@@ -1,0 +1,18 @@
+{
+  "name": "sentinels-of-the-multiverse",
+  "version": "1.0.0",
+  "description": "This is an application that you can use while playing the boardgame Sentinels of the Multiverse. While the game has round tokens to keep track of each hero's HP, this gets confusing rather quickly, when other heroes in the game can change your HP constantly. With this app every player can increment/decrement every hero's HP.",
+  "main": "index.js",
+  "dependencies": {
+    "cloudtypes": "*"
+  },
+  "keywords": [
+    "boardgame",
+    "cloud",
+    "types",
+    "sentinels",
+    "multiverse"
+  ],
+  "author": "Laure Philips",
+  "license": "ISC"
+}

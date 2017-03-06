@@ -1,0 +1,345 @@
+body {
+	font-family: 'Bangers';
+
+}
+h1, h2, h3, h4, p, span{
+	font-family: 'Bangers',Helvetica,Arial,sans-serif;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+
+#sentinels-start {
+	padding: 10px;
+	width: 800px;
+	height: 800px;
+	float: left;
+}
+
+#sentinels-start div {
+	width: 30%;
+	float: left;
+	text-align: center
+}
+
+
+#sentinels-start h4 {
+	background: url('/img/background.png') repeat-x;
+	text-align: center;
+	font-weight: bold;
+	
+}
+
+#sentinels-start h4:first-letter {
+	color: rgb(255, 0, 0);
+}
+
+h1.sentinels-title-1 {
+	color: #828081;
+	float: left;
+	font-weight: bold;
+	text-shadow: 2px 2px #000;
+}
+
+
+p.sentinels-title {
+	float:left;
+	color: #828081;
+	margin: 30px 5px 10px 5px;
+}
+
+h1.sentinels-title-2 {
+	color: #E89940;
+	float: left;
+	font-weight: bold;
+	text-shadow: 2px 2px #000;
+
+}
+
+#sentinels-select, #sentinels-select-v {
+	width: 200px;
+	display: inline-block;
+}
+
+#play-button {
+	height: 50px;
+	width: 70px;
+	margin: 10px 5px 0 10px;
+	background: url('/img/background.png') repeat-x;
+}
+
+#reset-button {
+	height: 50px;
+	width: 70px;
+	margin: 10px 0 0 0 ;
+	background: url('/img/background-blue.png') repeat-x;
+}
+
+.heroeslist .heroes-item  {
+	height: 150px;
+	width: 150px;
+	float:left;
+	margin: 7px;
+	text-align: center;
+	padding: 0;
+}
+
+.heroeslist .heroes-item .key-name {
+	display: inline-block;
+	background-color: #2DB2D2;
+	width: 150px;
+}
+
+.heroeslist .heroes-item .key-name:first-letter {
+	color: rgb(255,0,0);
+}
+
+.heroeslist .heroes-item .property-counter {
+	background: #2DB2D2;
+	min-width: 35px;
+	min-height: 35px;
+	font-size: 26px;
+	color: #F2B52E;
+	margin-top: 90px;
+	float:right;
+}
+
+.heroeslist .heroes-item .btn {
+	margin-top: 90px;
+	margin-right: 2px;
+	float: left;
+	font-family: 'Verdana';
+	font-weight: bold;
+}
+
+#Absolute\20 Zero {
+  background: url('/img/absolute.png') no-repeat;
+  box-shadow: 2px 2px 2px #8AC007;
+}
+
+#bunker {
+	background: url('/img/bunker.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#fanatic {
+	background: url('/img/fanatic.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#haka {
+	background: url('/img/haka.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#legacy {
+	background: url('/img/legacy.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#ra {
+	background: url('/img/ra.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#tachyon {
+	background: url('/img/tachyon.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#tempest {
+	background: url('/img/tempest.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#visionary {
+	background: url('/img/visionary.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#wraith {
+	background: url('/img/wraith.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#fixer {
+	background: url('/img/fixer.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#expatriette {
+	background: url('/img/expatriette.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#nightmist {
+	background: url('/img/nightmist.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#argent\20 adept {
+	background: url('/img/argent.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#chrono-ranger {
+	background: url('/img/chrono-ranger.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#omnitron-x {
+	background: url('/img/omnitron-x.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#scholar {
+	background: url('/img/scholar.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#unity {
+	background: url('/img/unity.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#knyfe {
+	background: url('/img/knyfe.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#sentinels {
+	background: url('/img/sentinels.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#naturalist {
+	background: url('/img/naturalist.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#setback {
+	background: url('/img/setback.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#parse {
+	background: url('/img/parse.png') no-repeat;
+	box-shadow: 2px 2px 2px #8AC007;
+}
+
+#Baron\20 Blade {
+	background: url('/img/baron.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+#Citizen\20 Dawn {
+	background: url('/img/citizen.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+#Grand\20 Warlord\20 Vos {
+	background: url('/img/grand.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+#Omnitron {
+	background: url('/img/omnitron.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+#Plague\20 Rat {
+	background: url('/img/plague.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+#Spite  {
+	background: url('/img/spite.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+#Chairman {
+	background: url('/img/chairman.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+#Matriarch {
+	background: url('/img/matriarch.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+#Akashbhuta {
+	background: url('/img/akashbhuta.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+#Apostate {
+	background: url('/img/apostate.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+#GloomWeaver {
+	background: url('/img/gloomweaver.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+#Ennead {
+	background: url('/img/ennead.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+#Iron\20 Legacy{
+	background: url('/img/iron.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+#Kismet {
+	background: url('/img/kismet.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+#La\20 Capitan{
+	background: url('/img/capitan.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+#The\20 Dreamer {
+	background: url('/img/dreamer.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+#Ambuscade {
+	background: url('/img/ambuscade.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+#Miss\20 Information {
+	background: url('/img/miss.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+#Fright\20 Train{
+	background: url('/img/fright.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+#Friction {
+	background: url('/img/friction.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+#Ermine {
+	background: url('/img/ermine.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+#Proletariat {
+	background: url('/img/proletariat.png') no-repeat;
+	box-shadow: 2px 2px 2px #FF0000;
+}
+
+
+@font-face {
+    font-family: "Bangers";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Bangers"), local("Bangers-Regular"), url("/fonts/Bangers.woff");
+}

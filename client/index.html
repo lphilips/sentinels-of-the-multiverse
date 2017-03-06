@@ -1,0 +1,251 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/sentinels.css" rel="stylesheet">
+
+  
+</head>
+<body>
+<div class="container">
+    <h1 class="sentinels-title-1">SENTINELS</h1>
+    <p class="sentinels-title"> of the</p> 
+    <h1 class="sentinels-title-2"> MULTIVERSE</h1>
+</div>
+<div class="container">
+
+  <ul class="nav nav-tabs" id="tabs">
+            <li class="active"><a href="#setup" data-toggle="tab">Setup</a></li>
+            <li><a href="#game" data-toggle="tab">Game</a></li>
+  </ul>  
+  <div class="tab-content">
+      <!-- Setup -->
+      <div class="tab-pane active" id="setup">
+          <div id="sentinels-start" class="sentinel-container">
+              <div>
+                <h4>Heroes</h4>
+                <select multiple id="sentinels-select" class="form-control"></select>
+                <h4>Villain</h4>
+                <select multiple id="sentinels-select-v" class="form-control"></select>
+              </div>
+              <div>
+                <button type="button" class="btn btn-warning" id="play-button">Go!</button>
+                <button type="button" class="btn btn-info" id="reset-button">Reset</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Game -->
+      <div class="tab-pane " id="game">
+        <div class="sentinel-container">
+          <ul class="list-group heroeslist"></ul>
+        </div>
+      </div>
+  </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="js/tab.js"></script>
+<script src="bundle.js"></script>
+
+<script>
+
+var Heroes = {
+  'Absolute Zero':  29,
+  'Bunker':         28,
+  'Fanatic':        30,
+  'Haka':           34,
+  'Legacy':         32,
+  'Ra':             30,
+  'Tachyon':        27,
+  'Tempest':        26,
+  'Visionary':      26,
+  'Wraith':         26,
+  'Fixer':          28,
+  'Expatriette':    29,
+  'NightMist':      27,
+  'Argent Adept':   24,
+  'Chrono-Ranger':  28,
+  'Omnitron-X':     25,
+  'Scholar':        29,
+  'Unity':          26,
+  'KNYFE':          30,
+  'Naturalist':     29,
+  'Setback':        31,
+  'Parse':          26
+}
+
+var Villains = {
+  'Baron Blade':      40,
+  'Citizen Dawn':     80,
+  'Grand Warlord Vos':90,
+  'Omnitron':         100,
+  'Plague Rat':       85,
+  'Spite':            80,
+  'Chairman':         35,
+  'Matriarch':        70,
+  "Akashbhuta":      200,
+  'Apostate':         66,   
+  'GloomWeaver':      90,
+  'Ennead':           60,
+  'Iron Legacy':      32,
+  'Kismet':           70,
+  'La Capitan':       75,
+  'The Dreamer':      6,
+  'Ambuscade':        50,
+  'Miss Information': 45,
+  'Fright Train':      35,
+  'Friction':         26,     
+  'Ermine':           25,
+  'Proletariat':      20
+}
+
+for (var hero in Heroes) {
+  if(Heroes.hasOwnProperty(hero)) {
+      $('#sentinels-select').append($('<option />').val(hero).text(hero));
+  }
+}
+
+for (var villain in Villains) {
+  if(Villains.hasOwnProperty(villain)) {
+      $('#sentinels-select-v').append($('<option />').val(villain).text(villain));
+  }
+}
+</script>
+
+<script>
+  $(function() {
+    // Javascript to enable link to tab
+    var url = document.location.toString();
+    if (url.match('#')) {
+      $('.nav-tabs a[href=#'+url.split('#')[1]+']').tab('show') ;
+    }
+
+    // Change hash for page-reload
+    $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+      window.location.hash = e.target.hash;
+    });
+  });
+</script>
+
+
+<script>
+
+
+  // CloudTypes
+  //////////////
+  // create a new CloudTypes client
+  var client = CloudTypes.createClient();
+
+  // connect to the server
+  client.connect(window.location.hostname, function (state) {
+
+
+    var app = new Application(state);
+    start(app,500);
+    app.install();
+    app.update();
+
+  });
+
+  function Application (state) {
+    this.state = state;
+    this.Hero = state.get('Hero');
+    this.HeroesView = new HeroesView({app: this, html: '.heroeslist'})
+  }
+
+  Application.prototype.update = function() {
+      this.HeroesView.update();
+  }
+
+  Application.prototype.install = function() {
+    var app = this;
+    $('#play-button').click(function () {
+    var selectedH = document.getElementById('sentinels-select').selectedOptions;
+    var selectedV = document.getElementById('sentinels-select-v').selectedOptions;
+    for (var i = 0; i < selectedH.length; i++) {
+        var name =  selectedH.item(i).value,
+            counter = Heroes[name], 
+            Hero = app.state.get('Hero'),
+            hero = Hero.create(name);
+            hero.get('counter').set(counter);
+
+      };
+      for (var i = 0; i < selectedV.length; i++) {
+        var name =  selectedV.item(i).value,
+            counter = Villains[name],
+            Villain = app.state.get('Hero'),
+            villain = Villain.create(name);
+            villain.get('counter').set(counter);
+      };
+      $('#tabs li:eq(1) a').tab('show');
+      app.state.yield();
+      app.update();
+    })
+
+    $('#reset-button').click(function () {
+        var Hero = app.state.get('Hero'),
+            heroes = Hero.where().all();
+        for (var i = 0; i < heroes.length; i++) {
+          heroes[i].delete();
+        }
+    })
+
+  }
+
+  Application.prototype.increment = function(name) {
+    var hero = this.Hero.where(function(entry) { return entry.key('name') === name}).all();
+    for( var i = 0; i < hero.length; i++) {
+      hero[i].get('counter').add(1);
+    }
+  }
+
+  Application.prototype.decrement = function(name) {
+    var hero = this.Hero.where(function(entry) { return entry.key('name') === name}).all();
+    for( var i = 0; i < hero.length; i++) {
+      hero[i].get('counter').add(-1);
+    }
+  }
+
+
+  // HeroesView
+  var HeroesView = CloudTypes.ListView.extend({
+    value: function () {
+      return this.app.Hero
+          .where()
+          .entries('counter')
+    },
+
+    createItemView: function(item) {
+      return new HeroesItemView({entry:item, app: this.app});
+    }
+
+  });
+
+  var HeroesItemView = CloudTypes.EntryView.extend({
+      initialize: function() {
+        var self = this,
+            name = this.entry.key('name');
+        this.html = $("<li class='list-group-item heroes-item' id='"+ name +"'><span class='key-name'></span><span class='badge property-counter'></span></li>");
+        $("<input class='btn btn-success' type='button' value='+'>").click(function() {self.app.increment(name)}).appendTo(this.html);
+        $("<input class='btn btn-danger' type='button' value='-'>").click(function() {self.app.decrement(name)}).appendTo(this.html);
+        HeroesItemView.__super__.initialize.call(this);
+      }
+
+
+  });
+
+
+function start(app, ms) {
+  var yielding = setInterval(function () {
+    app.state.yield();
+    app.update();
+  }, ms);
+  stop = function () { clearInterval(yielding); };
+}
+
+
+
+</script>
+</html>
